@@ -1,0 +1,3 @@
+name: standard-library-extension
+depend: standard-library standard-library-classes
+include: src
