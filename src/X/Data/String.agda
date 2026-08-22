@@ -12,10 +12,10 @@ import Data.Char.Properties as Char using (_≟_)
 open import Data.List.Membership.DecPropositional Char._≟_
 open import Relation.Nullary.Decidable.Core using (does)
 
--- Encloses string `s` with `enc` character if it contains `ifc` character.
-encloseIf : Char → Char → String → String
-encloseIf ifc enc s = if does (ifc ∈? toList s) then between (fromChar enc) (fromChar enc) s else s
+-- Encloses string `s` with `encl` and `encr` characters if it contains `ifc` character.
+encloseIf : Char → Char → Char → String → String
+encloseIf ifc encl encr s = if does (ifc ∈? toList s) then between (fromChar encl) (fromChar encr) s else s
 
-doubleQuoteIfSpace = encloseIf ' ' '"'
+doubleQuoteIfSpace = encloseIf ' ' '"' '"'
 
 _ : doubleQuoteIfSpace "x y" ≡ "\"x y\""; _ = refl
