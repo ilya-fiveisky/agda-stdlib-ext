@@ -14,7 +14,7 @@ import Data.Char.Properties as Char using (_≟_)
 open import Data.List.Membership.DecPropositional Char._≟_
 open import Relation.Nullary.Decidable.Core using (does)
 
--- Encloses string `s` with `encl` and `encr` characters if `s` satisfies P predicate.
+-- Encloses string `s` with `encl` and `encr` characters if `s` satisfies `P` predicate.
 encloseIf : {P : Pred String 0ℓ} → Decidable P → Char → Char → String → String
 encloseIf p encl encr s = if does (p s) then between (fromChar encl) (fromChar encr) s else s
 
