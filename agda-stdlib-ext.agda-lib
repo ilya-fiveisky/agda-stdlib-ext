@@ -1,3 +1,3 @@
 name: standard-library-extension
-depend: standard-library standard-library-classes
+depend: standard-library standard-library-classes standard-library-meta
 include: src
